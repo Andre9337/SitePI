@@ -1,0 +1,40 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Login</title>
+</head>
+<body>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="/">
+        <section>
+            <div class="form-box">
+                <form action="">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="text" name="username"  required>
+                        <label for="">Texto</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="password"  required>
+                        <label for="">Senha</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </form>
+    <!--form method="POST" action="/">
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Submit">
+    </form-->
+</body>
+</html>

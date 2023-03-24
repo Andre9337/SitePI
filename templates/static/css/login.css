@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /*mudar dps*/
+    width: 100%;
+    background-color: aqua;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background-color: rgb(36, 79, 65);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
