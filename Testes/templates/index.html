@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lista de usuários</title>
+  </head>
+  <body>
+    <h1>Lista de usuários</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in users%}
+          <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>
+              <a href="{{ url_for('edit', id=row[0]) }}">Editar</a>
+              <form action="{{ url_for('delete', id=row[0]) }}" method="post">
+                <input type="submit" value="Excluir">
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h2>Adicionar usuário</h2>
+    <form action="{{ url_for('add') }}" method="post">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email">
+      <input type="submit" value="Adicionar">
+    </form>
+  </body>
+</html>

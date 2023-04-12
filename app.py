@@ -1,6 +1,11 @@
 from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_url_path='/static')
+app.debug = True
+
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite://site.db'
+db= SQLAlchemy(app)
 
 
 users = [
