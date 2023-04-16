@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
-    cur.execute('SELECT * FROM users')
+    #cur.execute('SELECT * FROM users')
     users = conn.execute('SELECT * FROM users').fetchall()
     rows = cur.fetchall()
     with open('usuarios.txt', 'w') as f:
@@ -24,9 +24,10 @@ def add():
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
+        p = request.form['pass']
         conn = sqlite3.connect('database.db')
         cur = conn.cursor()
-        cur.execute('INSERT INTO users (name, email) VALUES (?, ?)', (name, email))
+        cur.execute('INSERT INTO users (name, email, pass) VALUES (?, ?, ?)', (name, email, p))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
@@ -41,9 +42,10 @@ def edit(id):
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
+        p = request.form['pass']
         conn = sqlite3.connect('database.db')
         cur = conn.cursor()
-        cur.execute('UPDATE users SET name = ?, email = ? WHERE id = ?', (name, email, id))
+        cur.execute('UPDATE users SET name = ?, email = ?, pass = ? WHERE id = ?', (name, email, p, id))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
@@ -62,6 +64,6 @@ if __name__ == '__main__':
     conn = sqlite3.connect('database.db')
     cur = conn.cursor()
     cur.execute('''CREATE TABLE IF NOT EXISTS users 
-                   (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT)''')
+                   (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, email TEXT, pass TEXT)''')
     conn.close()
     app.run(debug=True)
