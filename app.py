@@ -37,14 +37,15 @@ import sqlite3
 app = Flask(__name__, static_url_path='/static')
 app.debug=True
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method=='POST':
         username=request.form['username']
         password=request.form['password']
         conn=sqlite3.connect('database.db')
-        match=conn.execute("SELECT * FROM users WHERE (name = '?' OR email = '?') AND pass = '?';",(username,username,password)).fetchall()
-        conn.commit()
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM users WHERE (name = ? OR email = ?) AND pass = ?;", (username, username, password))
+        match = cur.fetchall()
         conn.close()
         if len(match) == 1:
             return redirect('/home')
