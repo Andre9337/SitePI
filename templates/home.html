@@ -3,8 +3,117 @@
 <html>
 <head>
     <title>Home</title>
+    <style>
+        /* Estilos CSS aqui */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            font-size: large;
+       }
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            background: url('static/css/dinheiro.jpg')no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        table{
+            color: black;
+        }
+        .form-box{
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            background: transparent;
+            border:2px solid rgba(255,255,255,0.5);
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 22px;
+        }
+        button{
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            background: transparent;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1em;
+        }
+        /*input{
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            padding: 0 35px 0 5px;
+            color: white;
+        }*/
+        
+    </style>
 </head>
 <body>
-    <h1>Welcome!</h1>
+    <section>
+        <div class="form-box">
+        <h1>Lista de ganhos/despesas</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop para iterar sobre a lista de usuários e exibir suas informações -->
+                    {% for row in data %}
+                    <tr>
+                        <!-- Coluna para exibir o ID do usuário -->
+                        <td>{{ row[1] }}</td>
+                        <!-- Coluna para exibir o Nome do usuário -->
+                        <td>{{ row[2] }}</td>
+                        <!-- Coluna para exibir o E-mail do usuário -->
+                        <td>{{ row[3] }}</td>
+                        <td>
+                            <!-- Link de "Editar" que redireciona para a rota de edição de usuário, passando o ID do usuário como parâmetro -->
+                            <a href="{{ url_for('edit', id=row[0]) }}">Editar</a>
+                            <!-- Formulário de "Excluir" que envia uma requisição POST para a rota de exclusão de usuário, passando o ID do usuário como parâmetro -->
+                            <form action="{{ url_for('delete', id=row[0]) }}" method="post">
+                                <input type="submit" name="exclude" value="Excluir">
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2>Adicionar</h2>
+            <form action="{{ url_for('add') }}" method="post">
+                <!-- Campo de entrada para o Nome do novo usuário -->
+                <label for="dia">Data:</label>
+                <input type="text" id="dia" name="dia">
+                <!-- Campo de entrada para o E-mail do novo usuário -->
+                <label for="valor">Valor:</label>
+                <input type="text" id="valor" name="valor">
+                <!-- Campo de entrada para a Senha do novo usuário -->
+                <label for="desc">Descrição:</label>
+                <input type="text" id="desc" name="desc">
+                <!-- Botão de envio para adicionar o novo usuário -->
+                <input type="submit" name="home" value="Adicionar">
+            </form>
+        </div>
+    </section>
 </body>
 </html>

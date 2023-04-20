@@ -17,7 +17,12 @@
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
                         <input type="text" name="username"  required>
-                        <label for="">Texto</label>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="email" name="email"  required>
+                        <label for="">Email</label>
                     </div>
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
@@ -25,17 +30,11 @@
                         <label for="">Senha</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password"  required>
-                        <label for="">Confirmar Senha</label>
-                    </div>
-                    <div class="inputbox">
-                        <input type="submit" value="Registrar">
+                        <input type="submit" name="register" value="Registrar">
                     </div>
                     <div>
                         <button id="outraPaginaBtn">Fazer Login</button>
                         <script>
-                         // Detecta o clique no botão "Abrir Outra Página"
                             document.getElementById('outraPaginaBtn').addEventListener('click', function() {
                             window.location.href = "/"; 
                             });
