@@ -52,6 +52,22 @@ def login():
         return render_template('login.html', error='Invalid username or password')
     else:
         return render_template('login.html')
+    
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method=='POST':
+        username=request.form['username']
+        password=request.form['password']
+        conn=sqlite3.connect('database.db')
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM users WHERE (name = ? OR email = ?) AND pass = ?;", (username, username, password))
+        match = cur.fetchall()
+        conn.close()
+        if len(match) == 1:
+            return redirect('/home')
+        return render_template('Register.html', error='Invalid username or password')
+    else:
+        return render_template('Register.html')
 
 @app.route('/home')
 def home():
