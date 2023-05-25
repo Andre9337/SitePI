@@ -53,6 +53,25 @@
                 <!-- Botão de envio para adicionar o novo usuário -->
                 <input type="submit" name="home" value="Adicionar">
             </form>
+            <form action="{{ url_for('home') }}" method="post">
+                <label for="filter-toggle">Filtro:</label>
+                <input type="checkbox" id="filter-toggle" name="filter-toggle">
+                
+                <!-- Campo de entrada para filtrar por data -->
+                <label for="filter_data">Data minima</label>
+                <input type="text" id="filter_data" name="filter_data">
+                
+                <!-- Campo de entrada para filtrar por valor -->
+                <label for="filter_valor">Valor minimo</label>
+                <input type="text" id="filter_valor" name="filter_valor">
+                
+                <!-- Campo de entrada para filtrar por descrição -->
+                <label for="filter_desc">Valor maximo</label>
+                <input type="text" id="filter_desc" name="filter_desc">
+                
+                <!-- Botão de envio para filtrar os dados -->
+                <input type="submit" name="filter" value="Filtrar">
+            </form>
         </div>
     </section>
 </body>

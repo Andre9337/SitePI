@@ -1,0 +1,36 @@
+Step: POST request
+Route / 
+
+Step: POST request
+Username: Andre
+Password: 1234
+
+Step: POST request
+Username: Andre
+Password: 1234
+Match: None
+
+Step: POST request
+Username: andre
+Password: 1234
+
+Step: POST request
+Username: andre
+Password: 1234
+Match: (1, 'andre', 'andrezinho', '1234')
+
+Step: POST request
+Username: andre
+Password: dsadad
+Match: None
+
+Step: POST request
+Username: andre
+Password: 1234
+Match: (1, 'andre', 'andrezinho', '1234')
+
+Step: POST request
+Username: andre
+Password: 1234
+Match: (1, 'andre', 'andrezinho', '1234')
+

@@ -1,4 +1,3 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,33 +8,31 @@
     {% if error %}
         <p>{{ error }}</p>
     {% endif %}
-    <form method="POST" action="/">
+    <form method="POST" action="/login">
         <section>
             <div class="form-box">
-                <form action="">
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="text" name="username"  required>
-                        <label for="">Usuario</label>
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" name="password"  required>
-                        <label for="">Senha</label>
-                    </div>
-                    <div class="inputbox">
-                        <input type="submit" name= "entrar" value="Entrar">
-                    </div>
-                    <div class="inputbox">
-                        <button id="outraPaginaBtn">Fazer Registro</button>
-                        <script>
-                            document.getElementById('outraPaginaBtn').addEventListener('click', function() {
+                <h2>Login</h2>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" name="username" required>
+                    <label for="">Usuario</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" required>
+                    <label for="">Senha</label>
+                </div>
+                <div class="inputbox">
+                    <input type="submit" name="entrar" value="Entrar">
+                </div>
+                <div class="inputbox">
+                    <button id="outraPaginaBtn">Fazer Registro</button>
+                    <script>
+                        document.getElementById('outraPaginaBtn').addEventListener('click', function() {
                             window.location.href = "/register"; 
-                            });
-                        </script>
-                    </div>
-                </form>
+                        });
+                    </script>
+                </div>
             </div>
         </section>
     </form>
