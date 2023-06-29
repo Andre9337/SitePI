@@ -1,36 +1,124 @@
-Step: POST request
-Route / 
+Step: ADD
+Route /add 
+desc = None 
+val = None 
+cat = None 
+data = None 
 
-Step: POST request
-Username: Andre
-Password: 1234
+Step: ADD
+Route /add 
+desc = None 
+val = None 
+cat = None 
+data = None 
 
-Step: POST request
-Username: Andre
-Password: 1234
-Match: None
+Step: ADD
+Route /add 
+desc = dsad 
+val = None 
+cat = None 
+data = None 
 
-Step: POST request
-Username: andre
-Password: 1234
+Step: ADD
+Route /add 
+desc = dsad 
+val = dassa 
+cat = 12 
+data =  
 
-Step: POST request
-Username: andre
-Password: 1234
-Match: (1, 'andre', 'andrezinho', '1234')
+Step: ADD
+Route /add 
+desc = dsad 
+val =  
+cat = 13 
+data = 2023-06-22 
 
-Step: POST request
-Username: andre
-Password: dsadad
-Match: None
+Step: ADD
+Route /add 
+desc = Netflix 
+val = 55 
+cat = 12 
+data = 2023-06-22 
 
-Step: POST request
-Username: andre
-Password: 1234
-Match: (1, 'andre', 'andrezinho', '1234')
+Step: ADD
+Route /add 
+desc = Netflix 
+val = 55 
+cat = 12 
+data = 2023-06-01 
 
-Step: POST request
-Username: andre
-Password: 1234
-Match: (1, 'andre', 'andrezinho', '1234')
+Step: ADD
+Route /add 
+desc = Netflix 
+val = 55 
+cat = 12 
+data = 2023-06-13 
+
+Step: ADD
+Route /add 
+desc = Netflix 
+val = 55 
+cat = 12 
+data = 2023-06-19 
+
+Step: ADD
+Route /add 
+desc = Churasco 
+val = 100 
+cat = 14 
+data = 2023-06-14 
+
+Step: ADD
+Route /add 
+desc = Churasco 
+val = 100 
+cat = 14 
+data = 2023-06-30 
+
+Step: ADD
+Route /add 
+desc = Amazon Prime 
+val = 25 
+cat = Entreterimento 
+data = 2023-06-22 
+
+Step: ADD
+Route /add 
+desc = Netflix 
+val = 55 
+cat = Entreterimento 
+data = 2023-06-20 
+
+Step: ADD
+Route /add 
+desc = Churasco 
+val = 100 
+cat = Fisico 
+data = 2023-06-27 
+
+Step: Match
+Route /login 
+User = n93377304@gmail.com
+Pass = 1234
+Match = (1, 'n93377304@gmail.com', '1234') 
+
+Step: ADD
+Route /add 
+desc = Netflix 
+val = 55 
+cat = Entreterimento 
+data = 2023-06-13 
+
+Step: Match
+Route /login 
+User = n93377304@gmail.com
+Pass = 1234
+Match = (1, 'n93377304@gmail.com', '1234') 
+
+Step: ADD
+Route /add 
+desc = Celular 
+val = 2000 
+cat = Online 
+data = 2023-06-30 
 
